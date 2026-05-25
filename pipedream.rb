@@ -20,13 +20,25 @@ class Pipedream < Formula
     version fetch_version
 
     on_macos do
-      url "https://cli.pipedream.com/darwin/amd64/latest/pd.zip"
-      sha256 fetch_checksum("https://cli.pipedream.com/darwin/amd64/latest/pd.zip")
+      on_intel do
+        url "https://cli.pipedream.com/darwin/amd64/latest/pd.zip"
+        sha256 fetch_checksum("https://cli.pipedream.com/darwin/amd64/latest/pd.zip")
+      end
+      on_arm do
+        url "https://cli.pipedream.com/darwin/arm64/latest/pd.zip"
+        sha256 fetch_checksum("https://cli.pipedream.com/darwin/arm64/latest/pd.zip")
+      end
     end
 
     on_linux do
-      url "https://cli.pipedream.com/linux/amd64/latest/pd.zip"
-      sha256 fetch_checksum("https://cli.pipedream.com/linux/amd64/latest/pd.zip")
+      on_intel do
+        url "https://cli.pipedream.com/linux/amd64/latest/pd.zip"
+        sha256 fetch_checksum("https://cli.pipedream.com/linux/amd64/latest/pd.zip")
+      end
+      on_arm do
+        url "https://cli.pipedream.com/linux/arm64/latest/pd.zip"
+        sha256 fetch_checksum("https://cli.pipedream.com/linux/arm64/latest/pd.zip")
+      end
     end
 
     # Automatically check for new versions
